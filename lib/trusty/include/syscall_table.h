@@ -26,6 +26,7 @@
  * Please keep this table sorted by syscall number
  */
 
+DEF_SYSCALL(0x24, virt_to_phys, paddr_t, 1, void *ptr)
 DEF_SYSCALL(0x1, write, long, 3, uint32_t fd, void *msg, uint32_t size)
 DEF_SYSCALL(0x2, brk, long, 1, uint32_t brk)
 DEF_SYSCALL(0x3, exit_etc, long, 2, int32_t status, uint32_t flags)

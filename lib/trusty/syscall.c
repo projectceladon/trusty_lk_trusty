@@ -271,3 +271,14 @@ long sys_finish_dma(user_addr_t uaddr, uint32_t size, uint32_t flags)
 
 	return NO_ERROR;
 }
+
+paddr_t sys_virt_to_phys(void *ptr)
+{
+	paddr_t phys_addr = 0;
+
+	phys_addr = vaddr_to_paddr(ptr);
+	if (!phys_addr)
+		panic("### failed to convert virtual address to physical address\n");
+
+	return phys_addr;
+}
